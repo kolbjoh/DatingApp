@@ -8,6 +8,8 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberDetailResolver } from './_resolver/member-detail.resolver';
 import { User } from './_models/user';
 import { MemberListResolver } from './_resolver/member-list.resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolver/member-edit.resolver';
 
 
 export const appRoutes: Routes = [
@@ -20,6 +22,7 @@ export const appRoutes: Routes = [
             {path: 'members', component: MemberListComponent, resolve: {users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent, 
             resolve: {user: MemberDetailResolver}},
+            {path: 'member/edit', component: MemberEditComponent, resolve: {user: MemberEditResolver}},
             {path: 'messages', component: MessagesComponent},
             {path: 'lists', component: ListsComponent},
         ]
