@@ -21,7 +21,7 @@ import {ErrorInterceptorProvider} from './_services/error.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from "./messages/messages.component";
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 import { MemberCardComponent } from './members/member-card/member-card.component';
@@ -30,12 +30,14 @@ import { AlertifyService } from './_services/alertify.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/user.service';
 import { MemberDetailResolver } from './_resolver/member-detail.resolver';
-import { MemberListResolver } from './_resolver/member-list.resolver';
+import {  MessagesResolver } from './_resolver/messages.resolver';
+import { MemberListResolver} from './_resolver/member-list-resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_resolver/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { ListsResolver } from './_resolver/lists.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 
 
@@ -57,6 +59,7 @@ export function tokenGetter(){
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
+      MemberMessagesComponent
    ],
   imports: [
     BrowserModule,
@@ -91,7 +94,8 @@ export function tokenGetter(){
     MemberListResolver,
     MemberEditResolver,
     PreventUnsavedChanges,
-    ListsResolver
+    ListsResolver,
+    MessagesResolver
 
   ],
   bootstrap: [AppComponent]
