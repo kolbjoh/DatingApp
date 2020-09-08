@@ -56,7 +56,7 @@ namespace datingapp.api.Controllers
 
             var messages = _mapper.Map<IEnumerable<MessageToReturnDto>>(messageFromRepo);
 
-            Response.AddPagination(messageFromRepo.CurrentPage, messageFromRepo.TotalCount, messageFromRepo.PageSize,
+            Response.AddPagination(messageFromRepo.CurrentPage, messageFromRepo.PageSize, messageFromRepo.TotalCount,
                 messageFromRepo.TotalPage);
             
             return Ok(messages);

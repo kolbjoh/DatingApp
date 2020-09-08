@@ -48,7 +48,7 @@ getUsers(page?, itemsPerPage?, userParams?, likesParams?): Observable<PaginatedR
    map(response => {
       paginatedResult.result = response.body;
       if(response.headers.get('Pagination') != null) {
-        paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'))
+        paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
       }
       return paginatedResult;
     })
@@ -86,7 +86,7 @@ getMessages(id: number, page?, itemsPerPage?, messageContainer?)
     params = params.append('pageSize', itemsPerPage);
   }
 
-  return this.http.get<Message[]>(this.baseUrl + 'users/'+ id +'/messages', {observe: 'response', params})
+  return this.http.get<Message[]>(this.baseUrl + 'users/' + id + '/messages', {observe: 'response', params})
   .pipe(
     map(response => {
       paginatedResult.result = response.body;

@@ -14,7 +14,7 @@ namespace datingapp.api.Helpers
 
         public int UserId { get; set; }
 
-        // [Microsoft.AspNetCore.Mvc.FromQuery(Name = "messageContainer")]
+
         
         public string MessageContainer { get; set; } = "Unread";
     }
